@@ -2,39 +2,150 @@
 import Layout from '~/layouts/LandingLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Contact from '~/components/widgets/Contact.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Lead Generation Landing Page Demo',
+  title: 'Lead Generation Landing Page',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero2 Widget ******************* -->
-
+  <!-- Hero Widget -->
   <Hero
-    tagline="Lead Generation Landing Demo"
-    title="Effective Lead Generation Landing Page: Unlock the Secrets"
-    subtitle="Discover the secrets to creating a Landing Page that turns curious visitors into eager leads. (Your Hero should grab attention instantly. Use a powerful headline that speaks directly to your target audience.)"
+    tagline="Effective Lead Generation"
+    title="Transform Visitors into Valuable Leads"
+    subtitle="Discover how our proven strategies can help you capture and nurture high-quality leads for your business."
     actions={[
-      { variant: 'primary', text: 'Call to Action', href: '#', icon: 'tabler:square-rounded-arrow-right' },
-      { text: 'Learn more', href: '#' },
+      { variant: 'primary', text: 'Get Started', href: '#contact' },
+      { text: 'Learn More', href: '#features' },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1597423498219-04418210827d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80',
-      alt: 'Magnet attracting screws. Lead generation landing page demo',
+      src: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Lead Generation Hero Image',
     }}
   />
 
+  <!-- Features Widget -->
+  <Features
+    id="features"
+    tagline="What We Offer"
+    title="Key Features of Our Lead Generation Service"
+    subtitle="We provide a comprehensive suite of tools and strategies to maximize your lead generation efforts."
+    items={[
+      {
+        title: 'Targeted Campaigns',
+        description: 'Create personalized campaigns that resonate with your ideal audience.',
+        icon: 'tabler:target',
+      },
+      {
+        title: 'Analytics Dashboard',
+        description: 'Track and analyze your lead generation performance with our intuitive dashboard.',
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Automated Nurturing',
+        description: 'Set up automated workflows to nurture leads through the sales funnel.',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Multi-Channel Approach',
+        description: 'Reach potential leads across various platforms and touchpoints.',
+        icon: 'tabler:device-desktop',
+      },
+    ]}
+  />
+
+  <!-- Steps Widget -->
+  <Steps
+    title="How It Works"
+    items={[
+      {
+        title: 'Identify Your Audience',
+        description: 'We help you define and understand your target audience for maximum impact.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Create Compelling Offers',
+        description: 'Develop irresistible lead magnets and offers that attract potential customers.',
+        icon: 'tabler:gift',
+      },
+      {
+        title: 'Implement Capture Mechanisms',
+        description: 'Set up effective lead capture forms and landing pages across your digital presence.',
+        icon: 'tabler:form',
+      },
+      {
+        title: 'Nurture and Convert',
+        description: 'Engage leads with personalized content and guide them towards conversion.',
+        icon: 'tabler:arrow-big-right',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80',
+      alt: 'Steps Image',
+    }}
+  />
+
+  <!-- FAQs Widget -->
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Find answers to common questions about our lead generation services."
+    items={[
+      {
+        title: 'What is lead generation?',
+        description: 'Lead generation is the process of attracting and converting potential customers into leads who have expressed interest in your product or service.',
+      },
+      {
+        title: 'How long does it take to see results?',
+        description: 'Results can vary, but most clients start seeing an increase in leads within the first month of implementing our strategies.',
+      },
+      {
+        title: 'Do you offer customized solutions?',
+        description: 'Yes, we tailor our lead generation strategies to fit your specific business needs and target audience.',
+      },
+      {
+        title: 'How do you measure success?',
+        description: 'We track key performance indicators such as lead quality, conversion rates, and ROI to measure the success of our campaigns.',
+      },
+    ]}
+  />
+
+  <!-- Contact Widget -->
+  <Contact
+    id="contact"
+    title="Get Started Today"
+    subtitle="Ready to supercharge your lead generation? Contact us now for a free consultation."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Name',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
+      },
+    ]}
+    textarea={{
+      label: 'Message',
+    }}
+    button="Send Message"
+  />
+
+  <!-- CallToAction Widget -->
   <CallToAction
-    title="Coming soon"
-    subtitle="We are working on the content of these demo pages. You will see them very soon. Stay tuned Stay tuned!"
+    title="Ready to Boost Your Lead Generation?"
+    subtitle="Don't miss out on potential customers. Start generating high-quality leads today!"
     actions={[
       {
         variant: 'primary',
-        text: 'Download Template',
-        href: 'https://github.com/onwidget/astrowind',
-        icon: 'tabler:download',
+        text: 'Get Started Now',
+        href: '#contact',
       },
     ]}
   />
